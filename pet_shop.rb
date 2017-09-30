@@ -46,4 +46,24 @@ def find_pet_by_name(pet_shop, target_pet_name)
           return pet
       end
   end
+  # if nothing is found, return nil
+  return
+end
+
+
+def remove_pet_by_name(pet_shop, target_pet_name)
+  for pet in pet_shop[:pets]
+      if pet[:name] == target_pet_name
+        pet_shop[:pets].delete(pet)
+      end
+  end
+  return pet
+end
+
+
+def add_pet_to_stock(pet_shop, new_pet)
+  #add new_pet hash to existing pet_shop hash
+  #return the number pet symbols in the pet_shop[:pets] array
+  pet_shop[:pets].push(new_pet)
+  return pet_shop[:pets].length()
 end
